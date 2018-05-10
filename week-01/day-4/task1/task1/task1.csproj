@@ -5,4 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\..\Documents\GREENFOX\task2.cs" />
+  </ItemGroup>
 </Project>

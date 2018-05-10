@@ -1,9 +1,15 @@
 ﻿<Properties StartupConfiguration="{332441F4-F8DC-4025-964D-C3845634911C}|Default">
-  <MonoDevelop.Ide.ItemProperties.task1 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="task1/Program.cs">
-    <Files>
-      <File FileName="task1/Program.cs" Line="5" Column="15" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.task1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="task1" expanded="True">
+            <Node name="task1" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
