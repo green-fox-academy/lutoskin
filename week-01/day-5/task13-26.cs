@@ -73,6 +73,13 @@ namespace task13
 			else if (girls + boys < 20 && girls > 0) { Console.WriteLine("Average party..."); }
 			else if (girls <= 0) { Console.WriteLine("Sausage party"); }
 
+
+			//22 conditional variable mutation
+			double a = 24;
+			int out1 = 0;
+			if (a % 2 == 0) { out1++; }
+            Console.WriteLine(out1);
+
 			//23 wont cheat exams
 
             for (int i = 0; i < 100; i++)
@@ -95,12 +102,6 @@ namespace task13
 			{
 				Console.WriteLine(i + " * " + yourNumber + " = " + i*yourNumber);
 			}
-
-			//22 conditional variable mutation
-			double a = 24;
-			int out1 = 0;
-			if (a % 2 == 0) { out1++; }
-            Console.WriteLine(out1);
 
             //26 count from to
             Console.WriteLine("Give me a number");
