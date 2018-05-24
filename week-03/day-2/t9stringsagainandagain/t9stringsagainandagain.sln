@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t9stringsagainandagain", "t9stringsagainandagain.csproj", "{FF861678-2924-4B1A-9849-E90E262AF495}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF861678-2924-4B1A-9849-E90E262AF495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF861678-2924-4B1A-9849-E90E262AF495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF861678-2924-4B1A-9849-E90E262AF495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF861678-2924-4B1A-9849-E90E262AF495}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
