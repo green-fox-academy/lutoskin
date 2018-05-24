@@ -2,32 +2,25 @@
 
 namespace t8stringsagain
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			Console.WriteLine(RemoveAllX("spacex"));
-		}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+			Console.WriteLine(RemoveX("sxpacex"));
+        }
 
-		public static string RemoveAllX(string textIn);
+		public static string RemoveX(string textIn)
 		{
-			char letter;
-
-            if (textIn == "")
+			if (textIn == "")
 			{
 				return null;
 			}
-            else if (textIn[0] == 'x')
+			if (textIn[0] == 'x')
 			{
-				letter = "";
+				return RemoveX(textIn.Remove(0, 1));
 			}
-            else 
-			{
-				letter = textIn[0];
-			}	
-			return letter + RemoveAllX(textIn(0,1));
+		
+			return textIn[0] + RemoveX(textIn.Remove(0, 1));
 		}
-
-    }
+	}
 }
-// Given a string, compute recursively a new string where all the 'x' chars have been removed.
