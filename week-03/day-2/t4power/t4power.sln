@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t4power", "t4power.csproj", "{0AC46C98-C375-4C4E-B509-FE589934ACA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AC46C98-C375-4C4E-B509-FE589934ACA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC46C98-C375-4C4E-B509-FE589934ACA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC46C98-C375-4C4E-B509-FE589934ACA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC46C98-C375-4C4E-B509-FE589934ACA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
