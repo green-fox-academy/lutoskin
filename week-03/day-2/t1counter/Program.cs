@@ -5,7 +5,8 @@ namespace t1counter
 	class Program
 	{
 
-		static void Main(string[] args) {
+		static void Main(string[] args) 
+		{
 			int n;
             Console.WriteLine("Give me a number");
 			n = Int32.Parse(Console.ReadLine());

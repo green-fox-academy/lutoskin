@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t2numberadder", "t2numberadder.csproj", "{11156968-CC12-4010-8440-F7694AFE7890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11156968-CC12-4010-8440-F7694AFE7890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11156968-CC12-4010-8440-F7694AFE7890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11156968-CC12-4010-8440-F7694AFE7890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11156968-CC12-4010-8440-F7694AFE7890}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
