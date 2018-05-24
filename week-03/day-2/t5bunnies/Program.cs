@@ -11,7 +11,12 @@ namespace t5bunnies
 
         public static int BunniesEars(int numberOfBunnies)
 		{
-			if (numberOfBunnies == 1)
+			if (numberOfBunnies == 0)
+			{
+				return 0;
+			}
+
+			else if (numberOfBunnies == 1)
 			{
 				return 2;
 			}
