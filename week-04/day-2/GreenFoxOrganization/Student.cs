@@ -1,7 +1,7 @@
 ﻿using System;
 namespace GreenFoxOrganization
 {
-	public class Student : Person
+	public class Student : Person, ICloneable
     {
 		string previousOrganization;
 		int skippedDays;
@@ -37,6 +37,12 @@ namespace GreenFoxOrganization
 		public int SkipDays(int numberOfDays)
 		{
 			return skippedDays += numberOfDays;
+		}
+
+		public object Clone()
+		{
+			Student clonedStudent = new Student(name, age, gender, previousOrganization);
+			return clonedStudent;
 		}
 	}
 }

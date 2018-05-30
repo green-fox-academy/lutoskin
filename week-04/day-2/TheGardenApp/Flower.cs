@@ -21,8 +21,6 @@ namespace TheGardenApp
 		public void Water(double amountOfWater)
         {
             water += 0.75 * amountOfWater;
-
         }
-
     }
 }
