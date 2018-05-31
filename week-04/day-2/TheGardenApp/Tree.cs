@@ -1,26 +1,28 @@
 ﻿using System;
 namespace TheGardenApp
 {
-	public class Tree : Garden
+	public class Tree : Plant
     {
 		public Tree(string color)
         {
             this.color = color;
-            water = 0;
+			currentAmountOfWater = 0;
+			amountOfWaterNeeded = 10;
+			absorption = 0.4;
+
+            if (currentAmountOfWater < amountOfWaterNeeded)
+            {
+                thirsty = true;
+            }
         }
 
-		public void Info()
+        public override void IsItThirsty()
         {
-            if (water < 10)
+			if (thirsty == true)
             {
                 Console.WriteLine("The {0} tree needs water.", color);
             }
             Console.WriteLine("The {0} tree doesn't need water.", color);
-        }
-
-        public void Water(double amountOfWater)
-        {
-            water += 0.4 * amountOfWater;
         }
     }
 }
