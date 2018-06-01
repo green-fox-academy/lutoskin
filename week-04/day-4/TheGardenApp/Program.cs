@@ -1,17 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TheGardenApp
 {
-    class Program
+	class Program
     {
         static void Main(string[] args)
         {
-         foreach (var plant in plants)
+			Garden garden = new Garden();
+			garden.plants.Add(new Flower("yellow"));
+			garden.plants.Add(new Flower("blue")); 
+			garden.plants.Add(new Tree("purple")); 
+			garden.plants.Add(new Tree("orange"));
+
+			foreach (var plant in garden.plants)
 			{
 				plant.IsItThirsty();
 			}
-         
+
+			WaterGarden(garden.plants, 40);
 		}
     }
 }

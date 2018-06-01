@@ -22,7 +22,10 @@ namespace TheGardenApp
             {
                 Console.WriteLine("The {0} tree needs water.", color);
             }
-            Console.WriteLine("The {0} tree doesn't need water.", color);
-        }
+			else
+			{
+				Console.WriteLine("The {0} tree doesn't need water.", color);
+            }	
+		}            
     }
 }

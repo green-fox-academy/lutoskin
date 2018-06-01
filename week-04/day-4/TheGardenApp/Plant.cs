@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TheGardenApp
 {
-	public class Plant: Garden
+	public class Plant : Garden
     {
         protected string color;
 		protected double currentAmountOfWater;
@@ -12,8 +12,7 @@ namespace TheGardenApp
 		protected int amountOfWaterPoured;
 		protected bool thirsty;
                    
-
-        public void WaterGarden(int amountOfWaterPoured)
+        public void WaterGarden(List<Plant> plants, int amountOfWaterPoured)
         {
             Console.WriteLine("Watering garden with " + amountOfWaterPoured);
 
@@ -21,7 +20,7 @@ namespace TheGardenApp
 
             foreach (var plant in plants)
             {
-                if (thirsty == true)
+                if (plant.thirsty == true)
                 {
                     numberOfThirstyPlants++;
                 }
@@ -29,17 +28,15 @@ namespace TheGardenApp
 
 			foreach (var plant in plants)
             {
-				if (thirsty == true)
+				if (plant.thirsty == true)
 				{
-					currentAmountOfWater += amountOfWaterPoured / numberOfThirstyPlants;
+					plant.currentAmountOfWater += amountOfWaterPoured / numberOfThirstyPlants;
 				}
 			}
 		}
 
 		public virtual void IsItThirsty()
-        {
-			
-		}
-        
+        {			
+		}        
     }
 }

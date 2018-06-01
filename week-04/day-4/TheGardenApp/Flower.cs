@@ -7,8 +7,8 @@ namespace TheGardenApp
         {
             this.color = color;
 			currentAmountOfWater = 0;
-			absorption = 0.75;
 			amountOfWaterNeeded = 5;
+			absorption = 0.75;
          
             if (currentAmountOfWater < amountOfWaterNeeded)
             {
@@ -22,7 +22,10 @@ namespace TheGardenApp
             {
                 Console.WriteLine("The {0} flower needs water.", color);
             }
-            Console.WriteLine("The {0} flower doesn't need water.", color);
+			else
+			{
+				Console.WriteLine("The {0} flower doesn't need water.", color);	
+			}
         }      
     }
 }
