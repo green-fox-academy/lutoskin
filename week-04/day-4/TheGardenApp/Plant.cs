@@ -11,27 +11,24 @@ namespace TheGardenApp
 		protected double absorption;
 		protected int amountOfWaterPoured;
 		protected bool thirsty;
+		int numberOfThirstyPlants = 0;
                    
         public void WaterGarden(List<Plant> plants, int amountOfWaterPoured)
         {
             Console.WriteLine("Watering garden with " + amountOfWaterPoured);
 
-            int numberOfThirstyPlants = 0;
-
-            foreach (var plant in plants)
-            {
-                if (plant.thirsty == true)
-                {
-                    numberOfThirstyPlants++;
-                }
-            }
-
-			foreach (var plant in plants)
-            {
-				if (plant.thirsty == true)
+				if (thirsty == true)
 				{
-					plant.currentAmountOfWater += amountOfWaterPoured / numberOfThirstyPlants;
+					currentAmountOfWater += amountOfWaterPoured / numberOfThirstyPlants;
 				}
+			}
+		}
+
+		public virtual void CountThirstyPlants()
+		{
+			if (thirsty == true)
+			{
+				numberOfThirstyPlants++;
 			}
 		}
 

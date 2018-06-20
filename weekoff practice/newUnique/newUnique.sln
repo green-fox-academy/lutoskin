@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newUnique", "newUnique.csproj", "{B8D92D67-23BD-4075-ADBE-46D3AC2A5B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jkh", "jkh\jkh.csproj", "{76F32F92-9333-4DFD-9645-7965210610BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8D92D67-23BD-4075-ADBE-46D3AC2A5B66}.Debug|x86.ActiveCfg = Debug|x86
+		{B8D92D67-23BD-4075-ADBE-46D3AC2A5B66}.Debug|x86.Build.0 = Debug|x86
+		{B8D92D67-23BD-4075-ADBE-46D3AC2A5B66}.Release|x86.ActiveCfg = Release|x86
+		{B8D92D67-23BD-4075-ADBE-46D3AC2A5B66}.Release|x86.Build.0 = Release|x86
+		{76F32F92-9333-4DFD-9645-7965210610BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76F32F92-9333-4DFD-9645-7965210610BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{76F32F92-9333-4DFD-9645-7965210610BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{76F32F92-9333-4DFD-9645-7965210610BB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
