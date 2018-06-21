@@ -15,8 +15,7 @@ namespace todo_app
 
         public static void StartUpText()
         {
-            string startUpText = File.ReadAllText("manual.txt");
-            Console.WriteLine(startUpText);
+			Console.WriteLine(File.ReadAllText("manual.txt"));
         }
 
         public static void PrintTasks()
