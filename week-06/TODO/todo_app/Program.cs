@@ -10,21 +10,32 @@ namespace todo_app
         public static void Main(string[] args)
         {
 			StartUpText();
-
+			PrintTasks();
 		}
-
-        public static void StartUpText()
+        
+        private static void StartUpText()
         {
 			Console.WriteLine(File.ReadAllText("manual.txt"));
         }
 
-        public static void PrintTasks()
+		private static void PrintTasks()
 		{
-			List<string> todos = new List<string>(File.ReadLines("todos.txt"));
-			for (int i = 0; i < todos.Count; i++)
-			{
-				Console.WriteLine($"{i + 1} - {todos[i]}");
-			} 
+			var todos = File.ReadLines("todos.txt").ToList();
+
+			(todos == null) ? Console.WriteLine("No todos for today") :
+			todos.ForEach(x => Console.WriteLine($"{todos.IndexOf(x) + 1} - {todos[todos.IndexOf(x)]}"));         
+		}
+
+		private static void StartProgram(string[] args)
+		{
+			string[] commands = new string[] { "-l", "-a", "-r", "-c" };
+
+			from input in args
+			where args[0] == null ? StartUpText() :
+				  args[0] == "-l" ? PrintTasks() :
+				  args[0] == "-a" ? :
+				  args[0] == "-r" ? :
+			      args[0] == "-c" ? ;           //WTF IS WRONG WITH THIS
 		}
     }
 }
