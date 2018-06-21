@@ -22,7 +22,11 @@ namespace todo_app
 		{
 			var todos = File.ReadLines("todos.txt").ToList();
 
-			(todos == null) ? Console.WriteLine("No todos for today") :
+			if(todos == null)
+			{
+				Console.WriteLine("No todos for today");	
+			} 
+
 			todos.ForEach(x => Console.WriteLine($"{todos.IndexOf(x) + 1} - {todos[todos.IndexOf(x)]}"));         
 		}
 
