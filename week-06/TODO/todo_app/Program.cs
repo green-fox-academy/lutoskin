@@ -9,8 +9,7 @@ namespace todo_app
     {
         public static void Main(string[] args)
         {
-			StartUpText();
-			PrintTasks();
+			StartProgram(args);
 		}
         
         private static void StartUpText()
@@ -33,13 +32,21 @@ namespace todo_app
 		private static void StartProgram(string[] args)
 		{
 			string[] commands = new string[] { "-l", "-a", "-r", "-c" };
+            
+			if (args.Length == 0)
+			{
+				StartUpText();
+			}
 
-			from input in args
-			where args[0] == null ? StartUpText() :
-				  args[0] == "-l" ? PrintTasks() :
-				  args[0] == "-a" ? :
-				  args[0] == "-r" ? :
-			      args[0] == "-c" ? ;           //WTF IS WRONG WITH THIS
+			else if (args[0] == "-l")
+			{
+				PrintTasks();
+			}
+
+			else if (! commands.Contains(args[0]))
+			{
+                Console.WriteLine("Unsupported argument");
+			}         
 		}
     }
 }
