@@ -1,0 +1,30 @@
+﻿@model Account
+@{
+    ViewData["Title"] = "Account";
+
+}
+
+<h2>Account</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>AnimalType</th>
+    </tr>
+
+
+    @foreach (var account in Model.accounts)
+    {
+        <tr>
+            <td>@Model.accounts.Name</td>
+            <td>@Model.Balance</td>
+            <td>@Model.AnimalType</td>
+        </tr>
+    }
+
+
+
+
+
+</table>
