@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MongoDB.Driver;
 
 namespace todo_app
 {
@@ -9,44 +10,18 @@ namespace todo_app
     {
         public static void Main(string[] args)
         {
-			StartProgram(args);
-		}
-        
-        private static void StartUpText()
-        {
-			Console.WriteLine(File.ReadAllText("manual.txt"));
-        }
+			MongoClient client = new MongoClient();
+			var mongoDB = client.GetDatabase("new");
+			var newCollection = mongoDB.GetCollection<string>("collection");
 
-		private static void PrintTasks()
-		{
-			var todos = File.ReadLines("todos.txt").ToList();
+			Todo todo = new Todo();
 
-			if(todos == null)
-			{
-				Console.WriteLine("No todos for today");	
-			} 
-
-			todos.ForEach(x => Console.WriteLine($"{todos.IndexOf(x) + 1} - {todos[todos.IndexOf(x)]}"));         
-		}
-
-		private static void StartProgram(string[] args)
-		{
-			string[] commands = new string[] { "-l", "-a", "-r", "-c" };
+			StartProgram(args);		
             
-			if (args.Length == 0)
-			{
-				StartUpText();
-			}
-
-			else if (args[0] == "-l")
-			{
-				PrintTasks();
-			}
-
-			else if (! commands.Contains(args[0]))
-			{
-                Console.WriteLine("Unsupported argument");
-			}         
 		}
+      
     }
 }
+
+//mi az az async
+//
