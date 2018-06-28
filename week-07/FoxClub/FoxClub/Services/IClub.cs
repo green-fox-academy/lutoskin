@@ -9,7 +9,7 @@ namespace FoxClub.Services
     public interface IClub
     {
         void AddFox(Fox fox);
-        Fox GetYourFox();
+        Fox GetLatestFox();
         List<Fox> GetFoxes();
     }
 }
