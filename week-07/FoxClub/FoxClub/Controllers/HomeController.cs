@@ -11,19 +11,24 @@ namespace FoxClub.Controllers
 {
     public class HomeController : Controller
     {
+        IClub club;
+
+        public HomeController(IClub club)
+        {
+            this.club = club;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult HolyFood()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            return View((object)club.GetLatestFox().Name);
         }
 
-        public IActionResult Contact()
+        public IActionResult TricksterMachine()
         {
             ViewData["Message"] = "Your contact page.";
 
