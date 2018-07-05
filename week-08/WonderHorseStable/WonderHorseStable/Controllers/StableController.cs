@@ -56,5 +56,11 @@ namespace WonderHorseStable.Controllers
         {
             return View(stableService.GetHorses());
         }
+
+        [HttpPost]
+        public IActionResult Search(string searchString)
+        {          
+            return View("Index", stableService.SearchByName(searchString));
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace WonderHorseStable.Repositories
     public class StableContext : DbContext
     {
         public DbSet<Horse> Horses { get; set; }
+        public DbSet<Owner> Owners { get; set; }
         public StableContext(DbContextOptions options) : base(options)
         {
 

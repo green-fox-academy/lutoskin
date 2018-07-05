@@ -9,8 +9,10 @@ namespace WonderHorseStable.Models
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
         public bool Trained { get; set; }
         public bool HasPermission { get; set; }
         public string ImageSource { get; set; }
+        public Owner Owner { get; set; }
     }
 }

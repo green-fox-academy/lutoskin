@@ -55,5 +55,10 @@ namespace WonderHorseStable.Services
             return stableContext.Horses.Where(horse => horse.Id == id).First();
         }
 
+        internal List<Horse> SearchByName(string searchString)
+        {
+            searchString = (searchString is null) ? " " : searchString;
+            return stableContext.Horses.Where(horse => horse.Name.ToLower().Contains(searchString.ToLower())).ToList();
+        }
     }
 }
