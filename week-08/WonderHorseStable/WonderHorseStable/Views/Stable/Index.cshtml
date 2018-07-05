@@ -1,0 +1,32 @@
+﻿@model List<Horse>
+@{
+    ViewData["Title"] = "Stable";
+}
+
+<p></p>
+<p></p>
+
+<a href ="/stable/Edit"> Update Horses </a>
+
+    <p></p>
+    <p></p>
+
+    <table style="width:60%">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Trained</th>
+            <th>Has Permission</th>
+        </tr>
+
+        @foreach (var horse in @Model)
+        {
+            <tr>
+                <td>@horse.Id</td>
+                <td>@horse.Name</td>
+                <td>@horse.Trained</td>
+                <td>@horse.HasPermission</td>
+            </tr>
+        }
+    </table>
+

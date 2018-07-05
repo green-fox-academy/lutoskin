@@ -1,0 +1,72 @@
+﻿@model List<Horse>
+@{
+    ViewData["Title"] = "Update Stable";
+}
+
+<p></p>
+<a href="/stable/Index"> Update Horses </a>
+
+<p></p>
+
+<form action="/stable/AddHorse" method="post">
+    Name:
+    <input type="text" name="name" value="Name of horse" />
+
+    <div style="display : flex">
+        <div> Horse is trained </div>
+        <select name="trained">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select>
+    </div>
+
+    <div style="display : flex">
+        <div> Horse has permission </div>
+        <select name="haspermission">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select>
+    </div>
+    <button type="submit">Giddyup!</button>
+</form>
+
+
+
+<p></p>
+<p></p>
+
+<table style="width:60%">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Trained</th>
+        <th>Has Permission</th>
+    </tr>
+
+    @foreach (var horse in @Model)
+    {
+    <tr>
+        <td>@horse.Id</td>
+        <td>@horse.Name</td>
+        <td>@horse.Trained</td>
+        <td>@horse.HasPermission</td>
+        <td>
+            <form action="/stable/changetotrained?id=@horse.Id" method="post">
+                <button type="submit">trained</button>
+            </form>
+        </td>
+        <td>
+            <form action="/stable/changepermission?id=@horse.Id" method="post">
+                <button type="submit">permission change</button>
+            </form>
+        </td>
+        <td>
+            <form action="/stable/DeleteRecord?id=@horse.Id" method="post">
+                <button type="submit">delete record</button>
+            </form>
+        </td>
+
+    </tr>
+    }
+</table>
+
