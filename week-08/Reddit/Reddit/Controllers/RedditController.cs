@@ -21,6 +21,20 @@ namespace Reddit.Controllers
             return View(redditService.GetRPosts());
         }
 
+        [HttpPost]
+        public IActionResult UpVote(int id)
+        {
+            redditService.UpVote(id);
+            return Redirect("Trending");
+        }
+
+        [HttpPost]
+        public IActionResult DownVote(int id)
+        {
+            redditService.DownVote(id);
+            return Redirect("Trending");
+        }
+
         public IActionResult SubmitNewPost()
         {
             return View();

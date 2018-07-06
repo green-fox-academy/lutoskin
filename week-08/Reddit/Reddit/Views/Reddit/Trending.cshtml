@@ -20,8 +20,17 @@
     {
     <tr>
         <td>@rpost.Votes</td>
-        <td>@rpost.Votes</td>
-        <td>@rpost.Votes</td>
+
+        <td>
+            <form action="/reddit/upvote?id=@rpost.Id" method="post">
+                <button type="submit" class="btn-link">+</button>
+            </form>
+        </td>
+        <td>
+            <form action="/reddit/downvote?id=@rpost.Id" method="post">
+                <button type="submit" class="btn-link">-</button>
+            </form>
+        </td>
         <td><a href="@rpost.URLPath"> @rpost.Title </a></td>
     </tr>
     }

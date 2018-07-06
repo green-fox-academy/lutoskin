@@ -27,14 +27,23 @@ namespace Reddit.Services
             redditContext.SaveChanges();
         }
 
-        public void UpVote()
+        public void UpVote(int id)
         {
-
+            var postThatIsUpVoted = GetPostById(id);
+            postThatIsUpVoted.Votes++;
+            redditContext.SaveChanges();
         }
 
-        public void DownVote()
+        public void DownVote(int id)
         {
+            var postThatIsDownVoted = GetPostById(id);
+            postThatIsDownVoted.Votes--;
+            redditContext.SaveChanges();
+        }
 
+        private RPost GetPostById(int id)
+        {
+            return redditContext.RPosts.Where(post => post.Id == id).First();
         }
     }
 }
