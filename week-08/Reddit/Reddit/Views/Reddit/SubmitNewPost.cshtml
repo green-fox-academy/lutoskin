@@ -1,8 +1,20 @@
-﻿
+﻿@model List<RPost>
 @{
-    ViewData["Title"] = "SubmitNewPost";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Submit new post";
 }
 
-<h2>SubmitNewPost</h2>
+<h2>Submit New Post</h2>
 
+
+<form action="/reddit/SubmitNewPost" method="post">
+    Title:
+    <div style="display : flex">
+        <input type="text" name="title" value="You should see this it's so rad" />
+    </div>
+    URL
+    <div style="display : flex">
+        <input type="text" name="urlpath" value="" />
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

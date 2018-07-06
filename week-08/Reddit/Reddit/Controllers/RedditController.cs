@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Reddit.Models;
 using Reddit.Services;
 
 namespace Reddit.Controllers
@@ -35,6 +36,14 @@ namespace Reddit.Controllers
             return Redirect("Trending");
         }
 
+        [HttpPost]
+        public IActionResult SubmitNewPost(RPost rPost)
+        {
+            redditService.SubmitNewPost(rPost);
+            return Redirect("Trending");
+        }
+
+        [HttpGet]
         public IActionResult SubmitNewPost()
         {
             return View();

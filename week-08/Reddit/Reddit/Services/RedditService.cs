@@ -21,7 +21,7 @@ namespace Reddit.Services
             return redditContext.RPosts.ToList();
         }
 
-        public void AddRPosts(RPost rPost)
+        public void SubmitNewPost(RPost rPost)
         {
             redditContext.RPosts.Add(rPost);
             redditContext.SaveChanges();
