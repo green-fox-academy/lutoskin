@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Reddit.Repositories;
+using Reddit.Services;
 
 namespace Reddit
 {
@@ -26,6 +27,8 @@ namespace Reddit
             string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=reddit;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddMvc();
             services.AddDbContext<RedditContext>(options => options.UseSqlServer(connectionString));
+            services.AddTransient<RedditContext>();
+            services.AddTransient<RedditService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

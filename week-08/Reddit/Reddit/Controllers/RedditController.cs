@@ -18,6 +18,11 @@ namespace Reddit.Controllers
 
         public IActionResult Trending()
         {
+            return View(redditService.GetRPosts());
+        }
+
+        public IActionResult SubmitNewPost()
+        {
             return View();
         }
     }
