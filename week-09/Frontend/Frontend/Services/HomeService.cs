@@ -27,5 +27,31 @@ namespace Frontend.Services
             }
             return factorial;
         }
+
+        public int ArraySum(ArrayModel array)
+        {
+            int summa = array.Numbers.Sum();
+            return summa;
+        }
+
+        public int ArrayMultiply(ArrayModel array)
+        {
+            int result = 1;
+            for (int i = 0; i < array.Numbers.Count(); i++)
+            {
+                result *= array.Numbers[i];
+            }
+            return result;
+        }
+
+        public int[] ArrayDouble(ArrayModel array)
+        {
+            int[] result = new int[array.Numbers.Count()];
+            for (int i = 0; i < array.Numbers.Count(); i++)
+            {
+                result[i] = array.Numbers[i] * 2;
+            }
+            return result;
+        }
     }
 }

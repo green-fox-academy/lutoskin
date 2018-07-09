@@ -75,5 +75,23 @@ namespace Frontend.Controllers
             
             return Json(new { error = "Please provide a number!" });
         }
+
+        [HttpPost("/arrays")]
+        public IActionResult Arrays([FromBody] ArrayModel array)
+        {
+            if (array.What == "sum")
+            {
+                return Json(new { result = homeService.ArraySum(array) });
+            }
+            else if (array.What == "multiply")
+            {
+                return Json(new { result = homeService.ArrayMultiply(array) });
+            }
+            else if (array.What == "double")
+            {
+                return Json(new { result = homeService.ArrayDouble(array) });
+            }
+            return null;
+        }
     }
 }
