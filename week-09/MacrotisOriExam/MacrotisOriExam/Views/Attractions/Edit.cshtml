@@ -1,0 +1,56 @@
+﻿@model MacrotisOriExam.ViewModels.EditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table style="width:80%">
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Longitude</th>
+        <th>Lattitude</th>
+        <th>Category</th>
+        <th>Duration</th>
+        <th>Recommended Age</th>
+    </tr>
+
+    @foreach (var attraction in @Model.Attractions)
+    {
+        <tr>
+            <td>@attraction.AttrName</td>
+            <td>@attraction.City</td>
+            <td>@attraction.Price</td>
+            <td>@attraction.Longitude</td>
+            <td>@attraction.Lattitude</td>
+            <td>@attraction.Category</td>
+            <td>@attraction.Duration</td>
+            <td>@attraction.RecommendedAge</td>
+        </tr>
+    }
+</table>
+
+<p></p>
+<p></p>
+<p></p>
+<form action="/edit/@Model.Attraction.Id" method="post">
+    Name:
+    <input type="text" name="attrname" value="@Model.Attraction.AttrName" required /><br>
+    City:
+    <input type="text" name="city" value="@Model.Attraction.City" required /><br>
+    Price:
+    <input type="text" name="price" value="@Model.Attraction.Price" required /><br>
+    Longitude:
+    <input type="text" name="longitude" value="@Model.Attraction.Longitude" required /><br>
+    Latitude:
+    <input type="text" name="Lattitude" value="@Model.Attraction.Lattitude" required /><br>
+    Category:
+    <input type="text" name="Category" value="@Model.Attraction.Category" required /><br>
+    Duration:
+    <input type="text" name="Duration" value="@Model.Attraction.Duration" required /><br>
+    Recommended Age:
+    <input type="text" name="RecommendedAge" value="@Model.Attraction.RecommendedAge" required /><br>
+
+    <button type="submit">Edit Attraction</button>
+</form>
