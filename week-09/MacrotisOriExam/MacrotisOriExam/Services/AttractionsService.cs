@@ -1,4 +1,5 @@
 ﻿using MacrotisOriExam.Models;
+using MacrotisOriExam.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,36 +9,34 @@ namespace MacrotisOriExam.Services
 {
     public class AttractionsService
     {
-        private AttractionContext attractionContext;
+        private AttractionsRepository attractionsRepository;
 
-        public AttractionsService(AttractionContext attractionContext)
+        public AttractionsService(AttractionsRepository attractionsRepository)
         {
-            this.attractionContext = attractionContext;
+            this.attractionsRepository = attractionsRepository;
         }
 
         public List<Attractions> GetAttractions()
         {
-            return attractionContext.Attractions.ToList();
+            return attractionsRepository.GetAttractions();
         }
 
         public void AddAttraction(Attractions attraction)
         {
-            attractionContext.Attractions.Add(attraction);
-            attractionContext.SaveChanges();
+            attractionsRepository.AddAttraction(attraction);
         }
 
         public void EditAttraction(Attractions attraction)
         {
-            attractionContext.Attractions.Update(attraction);
-            attractionContext.SaveChanges();
+            attractionsRepository.EditAttraction(attraction);
         }
 
         public Attractions GetAttractionById(int id)
         {
-            return attractionContext.Attractions.First(attr => attr.Id == id);
+            return attractionsRepository.GetAttractionById(id);
         }
 
-        public List<Attractions> GetAttractionsByNameAndCategory(string category, string city)
+        public List<Attractions> GetAttractionsByCategoryAndCity(string category, string city)
         {
             if (city is null || category is null)
             {
@@ -45,23 +44,13 @@ namespace MacrotisOriExam.Services
             }
             else if (category is null)
             {
-                return GetAttractionsByCity(city);
+                return attractionsRepository.GetAttractionsByCity(city);
             }
             else if (city is null)
             {
-                return GetAttractionsByCategory(category);
-            }  
-            return attractionContext.Attractions.Where(n => n.City == city).Where(n => n.Category == category).ToList();
-        }
-
-        public List<Attractions> GetAttractionsByCity(string city)
-        {
-            return attractionContext.Attractions.Where(n => n.City.Contains(city)).ToList();
-        }
-
-        public List<Attractions> GetAttractionsByCategory(string category)
-        {
-            return attractionContext.Attractions.Where(cat => cat.Category.Contains(category)).ToList();
+                return attractionsRepository.GetAttractionsByCategory(category);
+            }
+            return attractionsRepository.GetAttractionsByCategoryAndCity(category, city);         
         }
     }
 }

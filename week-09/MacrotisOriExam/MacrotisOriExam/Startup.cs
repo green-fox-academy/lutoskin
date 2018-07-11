@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MacrotisOriExam.Models;
+using MacrotisOriExam.Repositories;
 using MacrotisOriExam.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,7 @@ namespace MacrotisOriExam
         {
             services.AddMvc();
             services.AddTransient<AttractionContext>();
+            services.AddTransient<AttractionsRepository>();
             services.AddTransient<AttractionsService>();
         }
 

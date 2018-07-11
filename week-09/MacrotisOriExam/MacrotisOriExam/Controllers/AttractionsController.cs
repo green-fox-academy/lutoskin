@@ -48,7 +48,7 @@ namespace MacrotisOriExam.Controllers
         [HttpGet("/filter")]
         public IActionResult FilterAttractions(string category, string city)
         {
-            List<Attractions> filteredAttractions = attractionsService.GetAttractionsByNameAndCategory(category, city);
+            List<Attractions> filteredAttractions = attractionsService.GetAttractionsByCategoryAndCity(category, city);
             var filterDTO = new FilterDTO() { Result = "ok", Count = filteredAttractions.Count(), Attractions = filteredAttractions };
             return Json(filterDTO);
         }
