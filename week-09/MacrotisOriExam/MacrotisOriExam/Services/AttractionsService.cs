@@ -26,14 +26,15 @@ namespace MacrotisOriExam.Services
             attractionContext.SaveChanges();
         }
 
-        public void EditAttraction(int id)
+        public void EditAttraction(Attractions attraction)
         {
-            attractionContext.Attractions.Update(GetAttractionById(id));
+            attractionContext.Attractions.Update(attraction);
+            attractionContext.SaveChanges();
         }
 
         public Attractions GetAttractionById(int id)
         {
-            return attractionContext.Attractions.Where(attr => attr.Id == id).First();
+            return attractionContext.Attractions.First(attr => attr.Id == id);
         }
 
         public List<Attractions> GetAttractionsByNameAndCategory(string category, string city)
@@ -55,12 +56,12 @@ namespace MacrotisOriExam.Services
 
         public List<Attractions> GetAttractionsByCity(string city)
         {
-            return attractionContext.Attractions.Where(n => n.City == city).ToList();
+            return attractionContext.Attractions.Where(n => n.City.Contains(city)).ToList();
         }
 
         public List<Attractions> GetAttractionsByCategory(string category)
         {
-            return attractionContext.Attractions.Where(cat => cat.Category == category).ToList();
+            return attractionContext.Attractions.Where(cat => cat.Category.Contains(category)).ToList();
         }
     }
 }

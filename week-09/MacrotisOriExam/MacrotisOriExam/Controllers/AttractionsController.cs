@@ -28,7 +28,7 @@ namespace MacrotisOriExam.Controllers
         public IActionResult AddAttraction(Attractions attraction)
         {
             attractionsService.AddAttraction(attraction);
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
 
         [HttpGet("/edit/{id}")]
@@ -38,10 +38,19 @@ namespace MacrotisOriExam.Controllers
             return View("Edit", attractionEditViewModel);
         }
 
-        [HttpGet("/filter")]
-        public IActionResult FilterAttractions([FromQuery]string category, [FromQuery]string city)
+        [HttpPost("/edit")]
+        public IActionResult EditAttraction(Attractions attraction)
         {
-            return View("Index", attractionsService.GetAttractionsByNameAndCategory(category, city));
+            attractionsService.EditAttraction(attraction);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("/filter")]
+        public IActionResult FilterAttractions(string category, string city)
+        {
+            List<Attractions> filteredAttractions = attractionsService.GetAttractionsByNameAndCategory(category, city);
+            var filterDTO = new FilterDTO() { Result = "ok", Count = filteredAttractions.Count(), Attractions = filteredAttractions };
+            return Json(filterDTO);
         }
     }
 }
