@@ -32,14 +32,14 @@ namespace ReReddit.Controllers
             return Json(post);
         }
 
-        [HttpPost("/posts/{id}/upvote")]
+        [HttpPut("/posts/{id}/upvote")]
         public IActionResult Upvote(int id)
         {
             redditService.UpVote(id);
             return Json(redditService.GetPostById(id));
         }
 
-        [HttpPost("/posts/{id}/downvote")]
+        [HttpPut("/posts/{id}/downvote")]
         public IActionResult Downvote(int id)
         {
             redditService.DownVote(id);
