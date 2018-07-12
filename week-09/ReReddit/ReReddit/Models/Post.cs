@@ -12,6 +12,7 @@ namespace ReReddit.Models
         public string Url { get; set; }
         public DateTime TimeStamp { get; set; }
         public int Score { get; set; }
+        public User User { get; set; }
 
         public Post()
         {

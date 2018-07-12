@@ -18,7 +18,7 @@ namespace ReReddit.Controllers
         {
             this.redditService = redditService;
         }
-        // GET: /<controller>/
+
         [HttpGet("/posts")]
         public IActionResult Index()
         {

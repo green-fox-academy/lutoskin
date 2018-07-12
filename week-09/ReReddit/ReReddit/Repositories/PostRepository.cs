@@ -40,7 +40,7 @@ namespace ReReddit.Repositories
 
         public Post GetPostById(int id)
         {
-            return redditContext.Posts.Where(p => p.Id == id).First();         
+            return redditContext.Posts.First(p => p.Id == id);         
         }
     }
 }
