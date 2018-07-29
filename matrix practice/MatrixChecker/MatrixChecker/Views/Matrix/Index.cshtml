@@ -1,0 +1,25 @@
+﻿@model MatrixChecker.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Matrix Checker</h2>
+<p>Check if your matrix is increasing!</p>
+<p>Add a Matrix and sit back while the evaluation happens.</p>
+<br>
+
+<form action="/matrix" method="post">
+    <textarea style="width:300px; height:150px;" name="matrixInput">@Model.MatrixNumbers</textarea><br>
+    <button type="submit">Submit</button>
+</form>
+
+<br>
+@if (Model.Result != null)
+{
+<p>Result:</p>
+<p>@Model.Result</p>
+}
+
+
+
