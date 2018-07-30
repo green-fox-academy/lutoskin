@@ -20,45 +20,54 @@ namespace MatrixChecker.Services
         public IndexViewModel CheckMatrix(string matrixInput)
         {
             IndexViewModel output = new IndexViewModel() { MatrixNumbers = matrixInput };
-            if (IsSquare(CreateListList(matrixInput)) && IsIncreasing(CreateListList(matrixInput)))
+            List<List<string>> matrix = MatrixInputToListOfLists(matrixInput);
+            if (IsSquare(matrix) && IsIncreasing(matrix))
             {
                 output.Result = "Success! Matrix is square and increasing!";
                 AddMatrix(matrixInput);
             }
+            if (!IsSquare(matrix))
+            {
+                output.Result = "Matrix is not square.";
+            }
+            if (!IsIncreasing(matrix))
+            {
+                output.Result = "Matrix is not increasing.";
+            }
             else
             {
-                output.Result = "No";
+                output.Result = "Try again please";
             }
             return output;
         }
 
-        public List<List<string>> CreateListList(string matrixInput)
+        public List<List<string>> MatrixInputToListOfLists(string matrixInput)
         {
-            List<List<string>> lineslines = new List<List<string>>();
+            List<List<string>> matrixLines = new List<List<string>>();
             foreach (string line in matrixInput.Split('\n').ToList())
             {
-                lineslines.Add(line.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
+                matrixLines.Add(line.Split(" ", StringSplitOptions.RemoveEmptyEntries).ToList());
             }
-            return lineslines;
+            return matrixLines;
         }
 
-        public bool IsSquare(List<List<string>> lineslines)
+        public bool IsSquare(List<List<string>> matrixLines)
         {
-            return lineslines.All(l => l.Count == lineslines.Count);
+            return matrixLines.All(l => l.Count == matrixLines.Count);
         }
 
-        public bool IsIncreasing(List<List<string>> lineslines)
+        public bool IsIncreasing(List<List<string>> matrixLines)
         {
-            return LinesIncreasing(lineslines) && RowsIncreasing(lineslines);
+            return LinesIncreasing(matrixLines) && RowsIncreasing(matrixLines);
         }
 
-        public bool LinesIncreasing(List<List<string>> lineslines)
+        public bool LinesIncreasing(List<List<string>> matrixLines)
         {
-            for (int j = 0; j < lineslines.Count; j++)
+            for (int j = 0; j < matrixLines.Count; j++)
             {
-                for (int i = 1; i < lineslines.Count; i++)
+                for (int i = 1; i < matrixLines.Count; i++)
                 {
-                    if (! (Int32.Parse(lineslines[j][i]) >= Int32.Parse(lineslines[j][i-1])))
+                    if (! (Int32.Parse(matrixLines[j][i]) >= Int32.Parse(matrixLines[j][i-1])))
                     {
                         return false;
                     }
@@ -67,13 +76,13 @@ namespace MatrixChecker.Services
             return true;
         }
 
-        public bool RowsIncreasing(List<List<string>> lineslines)
+        public bool RowsIncreasing(List<List<string>> matrixLines)
         {
-            for (int j = 0; j < lineslines.Count; j++)
+            for (int j = 0; j < matrixLines.Count; j++)
             {
-                for (int i = 1; i < lineslines.Count; i++)
+                for (int i = 1; i < matrixLines.Count; i++)
                 {
-                    if (!(Int32.Parse(lineslines[i][j]) >= Int32.Parse(lineslines[i - 1][j])))
+                    if (!(Int32.Parse(matrixLines[i][j]) >= Int32.Parse(matrixLines[i - 1][j])))
                     {
                         return false;
                     }
