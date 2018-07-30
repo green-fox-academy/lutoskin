@@ -21,10 +21,9 @@ namespace MatrixChecker.Services
         {
             IndexViewModel output = new IndexViewModel() { MatrixNumbers = matrixInput };
             List<List<string>> matrix = MatrixInputToListOfLists(matrixInput);
-            if (IsSquare(matrix) && IsIncreasing(matrix))
+            if (matrixInput == null)
             {
-                output.Result = "Success! Matrix is square and increasing!";
-                AddMatrix(matrixInput);
+                output.Result = "Please enter a matrix!";
             }
             if (!IsSquare(matrix))
             {
@@ -33,6 +32,11 @@ namespace MatrixChecker.Services
             if (!IsIncreasing(matrix))
             {
                 output.Result = "Matrix is not increasing.";
+            }
+            if (IsSquare(matrix) && IsIncreasing(matrix))
+            {
+                output.Result = "Success! Matrix is square and increasing!";
+                AddMatrix(matrixInput);
             }
             else
             {
